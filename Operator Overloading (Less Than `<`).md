@@ -1,38 +1,61 @@
-# 🐟 Method Overriding-Fish and Shark Class Inheritance in Python
+# # 🐍 Python OOP: Polymorphism with Classes
 
-## 🧠 AIM:
-To write a Python program that demonstrates class inheritance by creating a parent class `Fish` with a method `type`, and a child class `Shark` that overrides the `type` method.
+## 🎯 AIM
 
-## 📋 ALGORITHM:
+To create two specific classes — `Beans` and `Mango`. Then, create a **generic function** that can accept any object and determine its **type** (Fruit or Vegetable) and **color**, using polymorphism.
 
-1. Define the `Fish` class with a method named `type()` that prints `"fish"`.
-2. Define the `Shark` class as a subclass of `Fish`, and override the `type()` method to print `"shark"`.
-3. Create an instance of the `Fish` class named `obj_goldfish`.
-4. Create an instance of the `Shark` class named `obj_hammerhead`.
-5. Use a `for` loop to iterate over both objects.
-6. Within the loop, call the `type()` method using the loop variable.
-7. Output will demonstrate method overriding: printing `"fish"` and `"shark"` accordingly.
+---
 
-## 💻 PROGRAM:
+## 🧠 ALGORITHM
+
+1. **Create Class `Beans`**:
+   - Define `type()` method that prints `"Vegetable"`.
+   - Define `color()` method that prints `"Green"`.
+
+2. **Create Class `Mango`**:
+   - Define `type()` method that prints `"Fruit"`.
+   - Define `color()` method that prints `"Yellow"`.
+
+3. **Define Generic Function `func(obj)`**:
+   - Call `obj.type()` and `obj.color()` — this works with both `Beans` and `Mango` objects, showcasing **polymorphism**.
+
+4. **Create Objects**:
+   - Instantiate `Beans` and `Mango`.
+   - Pass them to `func()` and execute the program.
+
+---
+
+## 💻 Program
 ```
-class Fish:
+class Beans:
     def type(self):
-        print("fish")
+        print("Vegetable")
+
+    def color(self):
+        print("Green")
 
 
-class Shark(Fish):
+class Mango:
     def type(self):
-        print("shark")
+        print("Fruit")
+
+    def color(self):
+        print("Yellow")
 
 
-obj_goldfish = Fish()
-obj_hammerhead = Shark()
-
-for obj in (obj_goldfish, obj_hammerhead):
+def func(obj):
     obj.type()
-```
-## OUTPUT
-<img width="139" height="71" alt="image" src="https://github.com/user-attachments/assets/0eb73c12-eb08-424b-9527-2440080cd770" />
+    obj.color()
 
-## RESULT
-Thus, the Python program to demonstrate class inheritance and method overriding using Fish and Shark classes was executed successfully and the output was verified.
+
+b = Beans()
+m = Mango()
+
+func(b)
+func(m)
+```
+## Output
+<img width="198" height="111" alt="image" src="https://github.com/user-attachments/assets/f88dba7b-7813-48a5-8aec-89b2ab7f32bb" />
+
+## Result
+Thus, the Python program to demonstrate polymorphism using the classes Beans and Mango with a generic function was executed successfully and the output was verified.
